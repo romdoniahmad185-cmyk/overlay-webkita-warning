@@ -187,3 +187,9 @@ font-size:15px;
 }
 
 }
+
+
+}
+.website{
+    transition: filter 0.3s ease;
+}
