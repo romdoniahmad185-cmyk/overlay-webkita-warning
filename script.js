@@ -11,7 +11,7 @@ function tutup() {
     popup.style.transform = "scale(0.9)";
 
     if (website) {
-        website.style.filter = "none";
+        website.style.filter = "blur";
     }
 
     setTimeout(() => {
