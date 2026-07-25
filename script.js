@@ -1,27 +1,34 @@
-// Mencegah halaman di-scroll saat overlay tampil
+// Kunci scroll saat overlay muncul
 document.body.style.overflow = "hidden";
 
-// Menutup overlay
+// Tutup overlay
 function tutup() {
+
     const popup = document.querySelector(".popup");
+    const website = document.querySelector(".website");
 
     popup.style.opacity = "0";
     popup.style.transform = "scale(0.9)";
 
+    if (website) {
+        website.style.filter = "none";
+    }
+
     setTimeout(() => {
         popup.style.display = "none";
-        document.body.style.background = "transparent";
         document.body.style.overflow = "auto";
     }, 300);
 }
 
-// Mencegah klik kanan (opsional)
-document.addEventListener("contextmenu", function(e){
+
+// Blok klik kanan
+document.addEventListener("contextmenu", e => {
     e.preventDefault();
 });
 
-// Mencegah tombol F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U (opsional)
-document.addEventListener("keydown", function(e){
+
+// Blok shortcut developer tools
+document.addEventListener("keydown", e => {
 
     if (
         e.key === "F12" ||
